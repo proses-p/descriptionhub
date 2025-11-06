@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>comments page</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                family-font: Arial;
+            }
+            h2 {
+                text-align: center;
+                color: green;
+                padding: 15px;
+            }
+            .container {
+                width: 100%;
+                display: block;
+                align-items: center;
+            }
+            form {
+                padding: 18px;
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                family-font: Arial, Sans-serif;
+            }
+            
+            .container label {
+                font-size: 19px;
+                padding: 13px;
+                display: block;
+                font-weight: bold;
+                margin-bottom: 6px;
+            }
+            .form-btn {
+                text-align: center;
+                font-size: 19px;
+                width: 100%;
+            }
+            .form-btn button {
+                border-radius: 14px;
+                background: green;
+                color: white;
+                cursor: pointer;
+                width: 90%;
+                padding: 17px;
+            }
+            textarea {
+                padding: 70px;
+                margin-top: 30px;
+                width: 100%;
+                outline: nones;
+            }
+            .container input {
+                border: none;
+                border-bottom: 1px solid grey;
+                margin-top: 8px;
+                margin-bottom: 15px;
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Read and provide comments</h2>
+        <div class="container">
+            <form method="POST">
+                {% csrf_token %}
+                <label>Name:</label>
+                <input type="text" name="name" required>
+                <label>Email*:</label>
+                <input type="email" name="email" required>
+                <textarea name="description" placeholder="Type your comment..." required></textarea>
+                <div class="form-btn">
+
+            <div class="form-btn">
+            <button type="submit">SEND</button>
+            </div>
+        </form>
+      </div>
+    </body>
+</html>
